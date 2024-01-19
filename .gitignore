@@ -1,0 +1,7 @@
+*.txt
+*.lock
+
+*_hs
+*_c
+*_rs
+*_cpp
