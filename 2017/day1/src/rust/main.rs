@@ -21,7 +21,7 @@ fn main() -> io::Result<()> {
 
     for i in 0..bytes.len() {
 
-        // Part 1: Sequential comparison
+        // Part 1: Compare to next
         if i < bytes.len() - 1 {
             if bytes[i] == bytes[i + 1] {
                 sum1 += (bytes[i] - b'0') as i32;
@@ -33,7 +33,7 @@ fn main() -> io::Result<()> {
             }
         }
 
-        // Part 2: Halfway-around comparison (requires modulo)
+        // Part 2: Halfway-around comparison
         if bytes[i] == bytes[(i + half_sz) % bytes.len()] {
             sum2 += (bytes[i] - b'0') as i32;
         }
