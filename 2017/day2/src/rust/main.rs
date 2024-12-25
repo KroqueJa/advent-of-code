@@ -70,23 +70,17 @@ fn main() -> io::Result<()> {
 
     let rows: VecDeque<Vec<u32>> = read_and_parse(file_path)?;
 
-    // Part 1: Compute differences between max and min for each row
-    let diffs: Vec<u32> = rows
+    let part1: u32 = rows
         .iter()
         .filter_map(|row| find_max_min(row.as_slice()))
         .map(|(x, y)| x - y)
-        .collect();
+        .sum();
 
-    let part1: u32 = diffs.iter().sum();
-
-    // Part 2: Compute divisions
-    let divisors: Vec<u32> = rows
+    let part2: u32 = rows
         .iter()
         .filter_map(|row| find_divisible(row.as_slice()))
-        .map(|(x, y)| if x > y {x / y} else {y / x})
-        .collect();
-
-    let part2: u32 = divisors.iter().sum();
+        .map(|(x, y)| if x > y { x / y } else { y / x })
+        .sum();
 
     println!("Part 1: {}\nPart 2: {}", part1, part2);
 
