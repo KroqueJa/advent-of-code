@@ -92,7 +92,6 @@ int main(int argc, char** argv)
         }
     }
 
-
     printf("\nPart 1: %zu\nPart2: %zu\n", part1, part2);
 
     free(info.contents);
