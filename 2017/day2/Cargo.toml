@@ -1,0 +1,8 @@
+[package]
+name = "aoc-2017-day-2"
+version = "1.0.0"
+edition = "2021"
+
+[[bin]]
+name = "day2_rs"
+path = "src/rust/main.rs"

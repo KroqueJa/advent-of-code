@@ -6,14 +6,14 @@ import Data.List (foldr1)
 solve :: String -> (Int, Int)
 solve input =
     let
-        matrix = parse input
+        rows = parse input
 
         -- Part 1
-        maxMinOfEach = map fromJust $ map maxMin matrix
+        maxMinOfEach = map fromJust $ map maxMin rows
         diffs = map (\(x, y) -> y - x) maxMinOfEach
 
         -- Part 2
-        divisorPairs = map fromJust $ map findDivisorPair matrix
+        divisorPairs = map fromJust $ map findDivisorPair rows
         divisions = map divLoByHi divisorPairs
     in
         (sum diffs, sum divisions)
@@ -30,7 +30,7 @@ solve input =
             in
                 Just (smol, big)
 
-        findDivisorPair :: [Int] -> Maybe (Int, Int)
+        findDivisorPair :: (Integral a) => [a] -> Maybe (a, a)
         findDivisorPair [] = Nothing
         findDivisorPair [_] = Nothing
         findDivisorPair (x1:x2:xs) = case filter (\x -> x1 `mod` x == 0 || x `mod` x1 == 0) (x2:xs) of
