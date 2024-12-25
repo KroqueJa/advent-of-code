@@ -6,7 +6,7 @@ def main():
         exit(0)
 
     filename = sys.argv[1]
-    with open(filename, 'rb') as f:
+    with open(filename, "rb") as f:
         contents = f.read().strip()
 
     sum1 = 0

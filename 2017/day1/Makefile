@@ -15,6 +15,6 @@ clean:
 	rm -f day1_hs day1_c day1_rs
 
 bench: day1
-	hyperfine --warmup 5 './day1_hs input.txt' './day1_c input.txt' './day1_rs input.txt' 'python src/python/day1.py input.txt'
+	hyperfine -N --warmup 5 './day1_hs input.txt' './day1_c input.txt' './day1_rs input.txt' 'python src/python/day1.py input.txt'
 
 .PHONY: day1_hs day1_c day1_rs clean bench

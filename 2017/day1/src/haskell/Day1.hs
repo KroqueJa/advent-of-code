@@ -1,10 +1,5 @@
 module Day1 (solve) where
 
-
-import qualified Data.ByteString as BS
-import qualified Data.ByteString.Char8 as BSC
-import qualified Data.ByteString.Unsafe as BSU
-
 import Data.Char (digitToInt)
 import Data.Array
 
@@ -16,7 +11,7 @@ solve input =
         digits = listArray (1, listSize) (map digitToInt noNewline) -- Create 1-based array
         halfLen = listSize `div` 2                         -- Halfway point for part 2
     in
-        (sumMatchesNext (1, listSize) digits,              -- Part 1: Match next
+        (sumMatchesNext (1, listSize) digits,              -- Part 1: Match next (wrapping around)
          sumMatchesHalf (1, listSize) digits halfLen)      -- Part 2: Match halfway
 
     where
