@@ -9,7 +9,7 @@
 - Performance: ⭐⭐⭐⭐⭐
 - Niceness: ⭐⭐⭐⭐
 
-**Python** does what I suspect it will do throughout the entire experiment: looks incredibly good way in the back of the race. This first problem was kind of low-level-ey and python then looks kind of low-level-ey, without looking frankensteined like Rust or pretentious like Haskell.
+**Python** does what I suspect it will do throughout the entire process: looks incredibly good way in the back of the race. This first problem was kind of low-level-ey and python then looks kind of low-level-ey, without looking frankensteined like Rust or pretentious like Haskell.
 - Performance: ⭐
 - Niceness: ⭐⭐⭐⭐⭐
 
