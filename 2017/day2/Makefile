@@ -10,7 +10,7 @@ day2_c:
 	gcc -O3 -o $@ -I../lib ../lib/lib.c src/c/main.c
 
 clean:
-	rm -f day2_hs
+	rm -f day2_hs day2_c day2_rs
 
 bench: day2
 	hyperfine -N --warmup 5 './day2_hs input.txt' './day2_rs input.txt' './day2_c input.txt' 'python src/python/day2.py input.txt'

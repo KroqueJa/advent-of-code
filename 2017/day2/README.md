@@ -7,13 +7,13 @@
 
 **Rust** looks better when writing "haskell in rust" rather than "c++ in rust". The lambda syntax is remarkably ugly. Slices are cool!
 - Performance: ⭐⭐⭐⭐⭐
-- Niceness: ⭐⭐⭐⭐
+- Niceness: ⭐⭐⭐
 
 **Python** wins the (quite anecdotal) race of "speed of implementation" - possibly because I had already written 3 other solutions and work with python every day. Still, I wrote this solution in maybe 3 minutes. Still dog slow.
 - Performance: ⭐
 - Niceness: ⭐⭐⭐⭐⭐
 
-**C** whups rust for this problem as well, performance-wise but the readability decays very rapidly with the complexity of the problem.
+**C** whups rust for this problem as well, performance-wise, but the readability decays _very_ rapidly with the complexity of the problem.
 - Performance: ⭐⭐⭐⭐⭐
 - Niceness: ⭐⭐
 
