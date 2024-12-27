@@ -27,8 +27,7 @@ solve i = (solvePart1 i, solvePart2 i)
 
         -- Spiral directions
         directions :: [(Int, Int)]
-        directions = [ (1, 0), (1, -1), (0, -1), (-1, -1)
-                     , (-1, 0), (-1, 1), (0, 1), (1, 1)]
+        directions = [(x, y)| x <- [-1, 0, 1], y <- [-1, 0, 1]]
 
         -- Compute the coordinates for the nth position in the spiral
         spiralStep :: Int -> (Int, Int)

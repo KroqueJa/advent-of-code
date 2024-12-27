@@ -35,30 +35,35 @@ fn solve_part_2(target: u32) -> i32 {
 fn find_first_larger(target: i32) -> i32 {
     let mut grid = HashMap::new();
     grid.insert((0, 0), 1); // Initialize grid center
-    go(1, &mut grid, target)
-}
 
-fn go(n: i32, grid: &mut HashMap<(i32, i32), i32>, target: i32) -> i32 {
-    let (x, y) = spiral_step(n as u32);
+    fn go(
+        n: i32,
+        grid: &mut HashMap<(i32, i32), i32>,
+        target: i32,
+    ) -> i32 {
+        let (x, y) = spiral_step(n as u32);
 
-    let directions = vec![
-        (-1, -1), (0, -1), (1, -1),
-        (-1, 0),          (1, 0),
-        (-1, 1),  (0, 1),  (1, 1),
-    ];
+        let directions = vec![
+            (-1, -1), (0, -1), (1, -1),
+            (-1, 0), (0, 0), (1, 0),
+            (-1, 1), (0, 1), (1, 1),
+        ];
 
-    let sum_neighbors: i32 = directions
-        .iter()
-        .map(|&(dx, dy)| grid.get(&(x + dx, y + dy)).unwrap_or(&0))
-        .sum();
+        let sum_neighbors: i32 = directions
+            .iter()
+            .map(|&(dx, dy)| grid.get(&(x + dx, y + dy)).unwrap_or(&0))
+            .sum();
 
-    grid.insert((x, y), sum_neighbors);
+        grid.insert((x, y), sum_neighbors);
 
-    if sum_neighbors > target {
-        sum_neighbors
-    } else {
-        go(n + 1, grid, target)
+        if sum_neighbors > target {
+            sum_neighbors
+        } else {
+            go(n + 1, grid, target)
+        }
     }
+
+    go(1, &mut grid, target) // Initial call
 }
 
 fn main() -> io::Result<()> {
